@@ -20,7 +20,7 @@ router.get("/users", (req, res) => {
     },
     {
       "id": 5,
-      "quote": "" ,
+      "quote": "I’ll never harden my heart, but I’ve toughened the muscles around it." ,
     },
     {
       "id": 6,
