@@ -1,9 +1,10 @@
 import React from 'react'
-import Navbar from '../Navbar/Navbar'
+import DropDown from '../DropDown/DropDown'
 
 const Homepage = (props) => {
   return (
-    <div>mama
+    <div>
+      <DropDown />
     
     </div>
   )
