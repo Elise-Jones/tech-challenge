@@ -1,8 +1,11 @@
 import React from 'react'
+import Navbar from '../Navbar/Navbar'
 
-const Homepage = () => {
+const Homepage = (props) => {
   return (
-    <div>Homepage</div>
+    <div>mama
+    
+    </div>
   )
 }
 
