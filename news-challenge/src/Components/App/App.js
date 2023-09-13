@@ -5,6 +5,7 @@ import DetailsPage from '../DetailsPage/DetailsPage';
 import { useState, useEffect} from 'react';
 import { articles } from '../../mockdata';
 import { getTopHeadlines } from '../../apiCalls';
+import { cleanRemovedArticles } from '../../utils';
 
 function App() {
   const [selectedCategory, setCategory] = useState('all headlines')
@@ -12,8 +13,9 @@ function App() {
     const fetchData = () => {
     getTopHeadlines(selectedCategory)
       .then((data) => {
-        console.log("data", data)
-        setAllArticles(data.articles);
+        const ma = cleanRemovedArticles(data.articles)
+        console.log("ma", ma)
+        setAllArticles(ma);
       })
       .catch((error) => {
         console.log(error);
@@ -27,7 +29,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path='/' element={<Homepage allArticles={allArticles} setCategory={setCategory} selectedCategory={selectedCategory} />} />
-        <Route path='/:title' element={<DetailsPage allArticles={allArticles}/>} />
+        <Route path='/:id' element={<DetailsPage allArticles={allArticles}/>} />
       </Routes>
       
     </div>

@@ -13,14 +13,14 @@ const Homepage = ({allArticles, selectedCategory, setCategory}) => {
   
   const articleCards = allArticles.map((article) => {
     return (
-      <NavLink to={`/${article.title}`} key={article.title} state={{art: article}}>
+      <NavLink to={`/${article.id}`} key={article.id} state={{art: article}}>
         <ArticleCard
           title={article.title}
           description={article.description}
           image={article.urlToImage}
           date={article.publishedAt}
           content={article.content}
-          id={article.title}
+          id={article.id}
          />
       </NavLink>
     )

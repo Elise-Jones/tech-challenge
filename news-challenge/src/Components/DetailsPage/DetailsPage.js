@@ -3,17 +3,15 @@ import { useParams } from "react-router";
 
 const DetailsPage = ({allArticles}) => {
  
-  const { title } = useParams()
-  
-  console.log("Title Parameter:", title);
-  console.log(title)
+  const { id } = useParams()
+
   const article = allArticles.find((article) => {
-    console.log("Article Title:", article.title);
-    return article.title === title;
+    console.log("Article Title:", article.id);
+    return article.id === id;
   });
   
   if(!article){
-    console.log("Article not found:", title);
+    
     return <div>Article not found</div>
   }
   
