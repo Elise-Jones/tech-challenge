@@ -9,6 +9,6 @@
 }
 
 img {
-  max-width: 100%; /* Make the image fit inside the container's width */
-  height: 50%; /* Maintain the image's aspect ratio */
+  max-width: 100%;
+  height: 50%; 
 }
