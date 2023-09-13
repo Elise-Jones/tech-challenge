@@ -7,36 +7,26 @@ import './Homepage.css'
 import { NavLink } from 'react-router-dom'
 import ArticleCard from '../ArticleCard/ArticleCard'
 
-const Homepage = () => {
-  const [selectedCategory, setCategory] = useState('all headlines')
-  const [allArticles, setAllArticles] = useState(articles)
+const Homepage = ({allArticles, selectedCategory, setCategory}) => {
+
+  console.log(allArticles)
   
-  const articleCards = articles.map((article) => {
+  const articleCards = allArticles.map((article) => {
     return (
-      <NavLink to={`${article.title}`} key={article.title}>
+      <NavLink to={`/${article.title}`} key={article.title} state={{art: article}}>
         <ArticleCard
           title={article.title}
           description={article.description}
           image={article.urlToImage}
           date={article.publishedAt}
+          content={article.content}
+          id={article.title}
          />
       </NavLink>
     )
 
   })
-  // const fetchData = () => {
-  //   getTopHeadlines(selectedCategory)
-  //     .then((data) => {
-  //       console.log(data.articles);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // };
 
-  // useEffect(() => {
-  //   fetchData();
-  // }, [selectedCategory]);
 
 
 

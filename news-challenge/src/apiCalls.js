@@ -1,5 +1,5 @@
 export const getTopHeadlines = (selectedCategory) => {
-  let apiUrl = "https://newsapi.org/v2/top-headlines?country=us&apiKey=fe67a1f37eb74baf918d6337568d3712"
+  let apiUrl = "https://newsapi.org/v2/top-headlines?country=us&apiKey=fe67a1f37eb74baf918d6337568d3712&pageSize=100"
   if(selectedCategory !== "all headlines"){
     apiUrl = `https://newsapi.org/v2/top-headlines?country=us&category=${selectedCategory}&apiKey=fe67a1f37eb74baf918d6337568d3712`
   }
