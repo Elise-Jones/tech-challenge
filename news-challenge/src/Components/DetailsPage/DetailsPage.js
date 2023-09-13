@@ -1,20 +1,16 @@
 import { useParams } from "react-router";
 
-
-const DetailsPage = ({allArticles}) => {
- 
-  const { id } = useParams()
+const DetailsPage = ({ allArticles }) => {
+  const { id } = useParams();
 
   const article = allArticles.find((article) => {
-    console.log("Article Title:", article.id);
     return article.id === id;
   });
-  
-  if(!article){
-    
-    return <div>Article not found</div>
+
+  if (!article) {
+    return <div>Article not found</div>;
   }
-  
+
   return (
     <div className="details-container">
       {/* <article className="article-card">

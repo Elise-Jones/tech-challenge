@@ -7,7 +7,7 @@ export const cleanRemovedArticles = (data) => {
       article.title === "[Removed]" ||
       article.description === "[Removed]" ||
       article.content === "[Removed]" ||
-      article.content === null
+      article.content === null || article.image === null || article.source.id === null || article.source.name === null
     );
   });
   const addUniqueID = cleanedArticles.map((cleanedarticle) => {
