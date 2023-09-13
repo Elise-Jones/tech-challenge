@@ -1,0 +1,14 @@
+.article-card {
+  display: flex;
+  flex-direction: column ;
+  align-items: center;
+  border: solid 3px blueviolet;
+  width: 40vw;
+  padding: 1em;
+  
+}
+
+img {
+  max-width: 100%; /* Make the image fit inside the container's width */
+  height: 50%; /* Maintain the image's aspect ratio */
+}

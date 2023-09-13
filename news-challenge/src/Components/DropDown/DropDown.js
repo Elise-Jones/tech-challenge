@@ -1,12 +1,7 @@
-import React, { useEffect, useState } from 'react'
+const DropDown = ({setCategory, selectedCategory}) => {
 
-const DropDown = () => {
-  const [selectedCategory, setCategory] = useState('all headlines')
-
-  useEffect(()=>
-  console.log(selectedCategory), [selectedCategory])
   return (
-    <select name='category' value={selectedCategory}>
+    <select name='category' value={selectedCategory} onChange={e => setCategory(e.target.value)}>
       <option value="all headlines">All Headlines</option>
       <option value="health">Health</option>
       <option value="technology"> Technology </option>
