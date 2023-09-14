@@ -1,55 +1,32 @@
-import React from 'react'
-import DropDown from '../DropDown/DropDown'
-import { useState, useEffect } from 'react'
-import { getTopHeadlines } from '../../apiCalls'
-import { articles } from '../../mockdata'
-import './Homepage.css'
-import { NavLink } from 'react-router-dom'
-import ArticleCard from '../ArticleCard/ArticleCard'
+import React from "react";
+import DropDown from "../DropDown/DropDown";
+import "./Homepage.css";
+import { NavLink } from "react-router-dom";
+import ArticleCard from "../ArticleCard/ArticleCard";
 
-const Homepage = () => {
-  const [selectedCategory, setCategory] = useState('all headlines')
-  const [allArticles, setAllArticles] = useState(articles)
-  
-  const articleCards = articles.map((article) => {
+const Homepage = ({ allArticles, selectedCategory, setCategory }) => {
+
+  const articleCards = allArticles.map((article) => {
     return (
-      <NavLink to={`${article.title}`} key={article.title}>
+      <NavLink to={`/${article.id}`} key={article.id}>
         <ArticleCard
           title={article.title}
           description={article.description}
           image={article.urlToImage}
           date={article.publishedAt}
-         />
+          content={article.content}
+          id={article.id}
+        />
       </NavLink>
-    )
-
-  })
-  // const fetchData = () => {
-  //   getTopHeadlines(selectedCategory)
-  //     .then((data) => {
-  //       console.log(data.articles);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // };
-
-  // useEffect(() => {
-  //   fetchData();
-  // }, [selectedCategory]);
-
-
+    );
+  });
 
   return (
-    
-      <>
-      <DropDown setCategory={setCategory} selectedCategory={selectedCategory}/>
-      <main className='articles-container'>
-        {articleCards}
-      </main>
-      </>
+    <div className="homepage-container">
+      <DropDown setCategory={setCategory} selectedCategory={selectedCategory} />
+      <main className="articles-container">{articleCards}</main>
+    </div>
+  );
+};
 
-  )
-}
-
-export default Homepage
+export default Homepage;

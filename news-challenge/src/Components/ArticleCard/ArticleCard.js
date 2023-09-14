@@ -7,7 +7,7 @@ const ArticleCard = ( props ) => {
   return (
     <article className='article-card'>
       <img src={image}></img>
-      <p>{date}</p>
+      <p>Date Published: {date}</p>
       <h2>{title}</h2>
       <p>{description}</p>
     </article>

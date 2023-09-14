@@ -1,9 +1,17 @@
-.articles-container {
+.homepage-container {
   display: flex;
   flex-direction: column;
-  align-items: center; 
-  justify-content: center; 
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+}
+
+.articles-container,
+.details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   max-width: 100%;
-  border: solid 4px red;
-  gap: 1em;
+  gap: 2em;
 }
