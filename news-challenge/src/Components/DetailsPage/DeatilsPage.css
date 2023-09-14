@@ -13,3 +13,11 @@
   margin-bottom: 1px;
   font-size: 20px;
 }
+
+button {
+  border-radius: .5em;
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+  font-weight: bold;
+}

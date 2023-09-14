@@ -1,5 +1,6 @@
 import { useParams } from "react-router";
 import './DeatilsPage.css'
+import { Link } from "react-router-dom";
 
 const DetailsPage = ({ allArticles }) => {
   const { id } = useParams();
@@ -14,6 +15,9 @@ const DetailsPage = ({ allArticles }) => {
 
   return (
     <div className="details-container">
+      <Link to ="/">
+        <button>Back to News </button>
+      </Link>
     <article className='article-card'>
       <img src={article.urlToImage}></img>
       <p className="source"> Source: {article.source.name}</p>
