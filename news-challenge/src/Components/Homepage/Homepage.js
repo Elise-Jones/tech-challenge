@@ -8,7 +8,7 @@ const Homepage = ({ allArticles, selectedCategory, setCategory }) => {
 
   const articleCards = allArticles.map((article) => {
     return (
-      <NavLink to={`/${article.id}`} key={article.id} state={{ art: article }}>
+      <NavLink to={`/${article.id}`} key={article.id}>
         <ArticleCard
           title={article.title}
           description={article.description}
@@ -22,10 +22,10 @@ const Homepage = ({ allArticles, selectedCategory, setCategory }) => {
   });
 
   return (
-    <>
+    <div className="homepage-container">
       <DropDown setCategory={setCategory} selectedCategory={selectedCategory} />
       <main className="articles-container">{articleCards}</main>
-    </>
+    </div>
   );
 };
 

@@ -1,6 +1,8 @@
 * {
   text-decoration: none;
-  color: inherit
+  color: #333;
+  font-family: FontAwesome;
+  text-align: center;
 }
 
 body {

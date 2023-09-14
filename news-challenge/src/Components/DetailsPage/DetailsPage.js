@@ -1,4 +1,5 @@
 import { useParams } from "react-router";
+import './DeatilsPage.css'
 
 const DetailsPage = ({ allArticles }) => {
   const { id } = useParams();
@@ -13,17 +14,15 @@ const DetailsPage = ({ allArticles }) => {
 
   return (
     <div className="details-container">
-      {/* <article className="article-card">
-        <img src={image}></img>
-        <p>{date}</p>
-        <h2>{title}</h2>
-        <p>{content}</p>
-
-      </article> */}
-      <p>hello</p>
-      <p>{article.title}</p>
-      <p>{article.description}</p>
+    <article className='article-card'>
+      <img src={article.urlToImage}></img>
+      <p className="source"> Source: {article.source.name}</p>
+      <p>Date Published: {article.publishedAt}</p>
+      <h2>{article.title}</h2>
+      <p>{article.content}</p>
+    </article>
     </div>
+  
   );
 };
 

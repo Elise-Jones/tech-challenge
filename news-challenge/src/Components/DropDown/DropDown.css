@@ -1,0 +1,24 @@
+
+.dropdown {
+  background-color: lightgrey;
+  border: 1px solid darkgrey;
+  border-radius: 4px;
+  font-size: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 30em;
+  min-height: 2em;
+  max-height: 10em;
+  margin: 1em 1em;
+  text-align: center;
+  border-radius: 1em;
+}
+
+.dropdown option {
+  background-color: #fff;
+  font-size: 16px;
+}
+
+.dropdown:hover {
+  border-color: #333;; 
+}
